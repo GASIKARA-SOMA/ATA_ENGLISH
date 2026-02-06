@@ -1,7 +1,6 @@
-
-import express from "express";
-import Post from "../models/Post.js";
-import { protect } from "../middleware/auth.middleware.js";
+const express = require("express");
+const Post = require("../models/Post.js");
+const { protect } = require("../middleware/auth.middleware.js");
 
 const router = express.Router();
 
@@ -11,7 +10,7 @@ router.post("/", protect, async (req, res) => {
     const post = await Post.create({
       userId: req.user.id,
       content: req.body.content,
-      image: req.body.image || ""
+      image: req.body.image || "",
     });
 
     res.status(201).json({ message: "Post created ✅", post });
@@ -73,4 +72,4 @@ router.delete("/:id", protect, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
