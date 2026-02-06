@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+const path = require('path');
+app.use(express.static(path.join(__dirname))); // sert HTML, CSS, JS
 
 // Import des routes
 import authRoutes from "./routes/auth.routes.js";
