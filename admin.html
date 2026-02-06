@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav>
+    <a href="index.html">Feed</a>
+    <a href="files.html">Fichiers / Vidéos</a>
+    <a href="chat.html">Chat</a>
+    <a href="profile.html">Profil</a>
+    <a href="admin.html" class="active">Admin</a>
+    <a href="login.html" id="logoutBtn">Déconnexion</a>
+</nav>
 
+<header>
+    <h1>Tableau de bord Admin</h1>
+</header>
+
+<main>
+    <section id="postsSection">
+        <h2>Posts / Annonces</h2>
+        <textarea id="adminPostContent" placeholder="Écrire un message pour tous..."></textarea>
+        <button id="adminPostBtn">Publier</button>
+        <div id="adminPostsList"></div>
+    </section>
+
+    <section id="filesSection">
+        <h2>Fichiers et Vidéos</h2>
+        <input type="text" id="fileName" placeholder="Nom du fichier ou vidéo">
+        <input type="url" id="fileURL" placeholder="URL du fichier ou vidéo">
+        <select id="fileType">
+            <option value="file">Fichier</option>
+            <option value="video">Vidéo</option>
+        </select>
+        <button id="uploadFileBtn">Uploader</button>
+        <div id="filesListAdmin"></div>
+    </section>
+
+    <section id="usersSection">
+        <h2>Utilisateurs</h2>
+        <div id="usersListAdmin"></div>
+    </section>
+
+    <section id="chatAdminSection">
+        <h2>Chat</h2>
+        <div id="chatAdminMessages" style="max-height:300px; overflow-y:auto;"></div>
+        <textarea id="chatAdminInput" placeholder="Envoyer un message..."></textarea>
+        <button id="sendChatAdminBtn">Envoyer</button>
+    </section>
+</main>
+
+<script src="js/admin.js"></script>
+</body>
+  </html>
