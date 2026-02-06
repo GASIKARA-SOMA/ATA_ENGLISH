@@ -1,11 +1,10 @@
-
-import express from "express";
-import User from "../models/User.js";
-import { protect } from "../middleware/auth.middleware.js";
+const express = require("express");
+const User = require("../models/User.js");
+const { protect } = require("../middleware/auth.middleware.js");
 
 const router = express.Router();
 
-// GET ALL USERS (optionnel)
+// GET ALL USERS
 router.get("/", async (req, res) => {
   try {
     const users = await User.find().select("-password");
@@ -39,7 +38,7 @@ router.put("/:id", protect, async (req, res) => {
       {
         username: req.body.username,
         bio: req.body.bio,
-        profilePic: req.body.profilePic
+        profilePic: req.body.profilePic,
       },
       { new: true }
     ).select("-password");
@@ -50,4 +49,4 @@ router.put("/:id", protect, async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
