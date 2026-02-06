@@ -1,10 +1,9 @@
-
 {
   "name": "mini-facebook",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.cjs",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.cjs"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -14,4 +13,4 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1"
   }
-  }
+}
